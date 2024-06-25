@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 describe Friflex::SortedSet do
-  subject(:sorted_set) { described_class.new(3, 100) }
+  subject(:sorted_set) { described_class.new(3, 3) }
 
-  example('#max')  { expect(sorted_set.max).not_to eq 100 }
+  example('#max')  { expect(sorted_set.max).not_to eq 3 }
   example('#min')  { expect(sorted_set.min).to be >= 0 }
   example('#size') { expect(sorted_set.size).to eq 3 }
   example('#to_s') { expect(sorted_set.to_s.split("\n").size).to eq 3 }
