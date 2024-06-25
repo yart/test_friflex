@@ -2,20 +2,25 @@
 
 # Provides a functionallity for sorted set
 class SortedSet
-  # Raises when a given argument has a wrong type
+  # Raises an exception when a given argument has a wrong type
   class WrongArgumentTypeError < ::StandardError
     def initialize(arg) = super "#{arg} must be an Integer"
+  end
+
+  # Raises an exception when a given argument is negative
+  class NegativeOrZeroValueError < ::StandardError
+    def initialize(arg) = super "#{arg} must be positive"
   end
 
   # @param [Integer] amount
   # @param [Integer] limit
   def initialize(amount, limit)
-    raise WrongArgumentTypeError, :amount unless amount.is_a?(Integer)
-    raise WrongArgumentTypeError, :limit  unless limit.is_a?(Integer)
-
     @amount = amount
     @limit  = limit
-    @set    = define_set
+
+    validate!
+
+    @set = define_set
   end
 
   def max  = @set[-1]
@@ -32,5 +37,13 @@ class SortedSet
       break if set.size == @amount
     end
     set.to_a.sort
+  end
+
+  def validate!
+    %i[amount limit].each do |param|
+      variable = instance_variable_get("@#{param}")
+      raise WrongArgumentTypeError,   param unless variable.is_a?(Integer)
+      raise NegativeOrZeroValueError, param unless variable.positive?
+    end
   end
 end
