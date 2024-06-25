@@ -17,6 +17,9 @@
 
 ```
 cd sorted_set
+```
+
+```
 ruby sorted_set.rb 30 1000
 ```
 
