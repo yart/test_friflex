@@ -10,4 +10,4 @@ EOHELP
 
 puts help if ARGV.size < 2 || ARGV.size > 2
 
-puts SortedSet.new(ARGV[0].to_i, ARGV[1].to_i)
+puts Friflex::SortedSet.new(ARGV[0].to_i, ARGV[1].to_i)
