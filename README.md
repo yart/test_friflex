@@ -1,13 +1,13 @@
-# Тестовые задачи от Friflex
+# Тестовые задачи от Рейне
 
 ## Установка
 
 ```
-git clone https://github.com/yart/test_friflex.git
+git clone https://github.com/yart/test_reine.git
 ```
 
 ```
-cd test_friflex
+cd test_reine
 ```
 
 ```
@@ -16,4 +16,4 @@ bundle install
 
 ## Список тестовых задач
 
-- [Sorted Set](https://github.com/yart/test_friflex/tree/master/sorted_set)
+- [Sorted Set](https://github.com/yart/test_reine/tree/master/sorted_set)

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe Friflex::SortedSet do
+describe Reine::SortedSet do
   subject(:sorted_set) { described_class.new(3, 3) }
 
   example('#max')  { expect(sorted_set.max).not_to eq 3 }
@@ -10,27 +10,27 @@ describe Friflex::SortedSet do
 
   describe '.new' do
     it 'raises exception when wrong type amount param given' do
-      expect { described_class.new('', 5) }.to raise_error Friflex::SortedSet::WrongArgumentTypeError, /amount/
+      expect { described_class.new('', 5) }.to raise_error Reine::SortedSet::WrongArgumentTypeError, /amount/
     end
 
     it 'raises exception when amount param valuse is negative' do
-      expect { described_class.new(-1, 5) }.to raise_error Friflex::SortedSet::NegativeOrZeroValueError, /amount/
+      expect { described_class.new(-1, 5) }.to raise_error Reine::SortedSet::NegativeOrZeroValueError, /amount/
     end
 
     it 'raises exception when amount param valuse is zero' do
-      expect { described_class.new(0, 5) }.to raise_error Friflex::SortedSet::NegativeOrZeroValueError, /amount/
+      expect { described_class.new(0, 5) }.to raise_error Reine::SortedSet::NegativeOrZeroValueError, /amount/
     end
 
     it 'raises exception when wrong type limit param given' do
-      expect { described_class.new(1, '') }.to raise_error Friflex::SortedSet::WrongArgumentTypeError, /limit/
+      expect { described_class.new(1, '') }.to raise_error Reine::SortedSet::WrongArgumentTypeError, /limit/
     end
 
     it 'raises exception when limit param valuse is negative' do
-      expect { described_class.new(2, -5) }.to raise_error Friflex::SortedSet::NegativeOrZeroValueError, /limit/
+      expect { described_class.new(2, -5) }.to raise_error Reine::SortedSet::NegativeOrZeroValueError, /limit/
     end
 
     it 'raises exception when limit param valuse is zero' do
-      expect { described_class.new(2, 0) }.to raise_error Friflex::SortedSet::NegativeOrZeroValueError, /limit/
+      expect { described_class.new(2, 0) }.to raise_error Reine::SortedSet::NegativeOrZeroValueError, /limit/
     end
   end
 end

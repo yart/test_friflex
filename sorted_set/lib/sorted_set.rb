@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Friflex
+module Reine
   # Provides a functionallity for sorted set
   class SortedSet < Set
     # Raises an exception when a given argument has a wrong type
