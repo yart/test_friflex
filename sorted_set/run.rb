@@ -3,7 +3,7 @@
 require_relative 'lib/sorted_set'
 
 help = <<~EOHELP
-  ruby sorted_set.rb <AMOUNT> <LIMIT>
+  ruby run.rb <AMOUNT> <LIMIT>
       AMOUNT   is a maximum amount of sorted set valuses, required param
       LIMIT    is an excluded upper limit of sorted set value, required param
 EOHELP
