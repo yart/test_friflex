@@ -20,13 +20,13 @@ cd sorted_set
 ```
 
 ```
-ruby sorted_set.rb 30 1000
+bundle exec ruby run.rb 30 1000
 ```
 
 ## Пример выполнения
 
 ```
-ruby sorted_set.rb 5 1000
+bundle exec ruby run.rb 5 1000
 206
 525
 696
