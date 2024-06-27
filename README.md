@@ -18,3 +18,4 @@ bundle install
 
 - [Sorted Set](https://github.com/yart/test_reine/tree/master/sorted_set)
 - [Check String](https://github.com/yart/test_reine/tree/master/check_string)
+- [LCD](https://github.com/yart/test_reine/tree/master/lcd)
