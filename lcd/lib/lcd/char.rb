@@ -4,9 +4,9 @@ module Reine
   class Lcd
     class Char
       def initialize(**opts)
-        object  = opts[:block] || Block
+        builder = opts[:block] || Block
         @size   = opts[:size]  || 1
-        @blocks = opts[:blocks].map { |row| row.map { |block| object.new(**block.merge(size: @size)) } }
+        @blocks = opts[:blocks].map { |row| row.map { |block| builder.new(**block.merge(size: @size)) } }
       end
 
       # @return [Integer]
