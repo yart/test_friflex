@@ -3,7 +3,9 @@
 module Reine
   class Lcd
     class Block
-      def initialize(**opts)
+      def initialize(**options)
+        opts = options.transform_keys(&:to_sym)
+
         @horizontal_border = opts[:horizontal] || '—'
         @vertical_border   = opts[:vertical]   || '|'
         @corner_border     = opts[:corner]     || ' '
@@ -18,6 +20,7 @@ module Reine
       def lines
         block = [build_line(@corner_border, @horizontal_border)]
         @size.times { block << build_line(@vertical_border, @center) }
+
         block
       end
 
