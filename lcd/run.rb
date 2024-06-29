@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'yaml'
 require_relative 'lib/lcd'
 
 size    = 2
@@ -21,4 +22,4 @@ if ARGV[0] == '-v' && ARGV[1] =~ /^\d+$/
   letters = ARGV[2..].join(' ').upcase
 end
 
-puts Reine::Lcd.display(letters, size)
+puts Reine::Lcd.display(letters, size:, font_definition: YAML.load_file('fonts/digital.yaml'))
